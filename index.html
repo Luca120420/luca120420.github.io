@@ -4,61 +4,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="Designer.ico">
-  <title>Scarica EchoScribe</title>
+  <title>EchoScribe - Audio Transcription Made Simple</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    /* Global Styles */
-    body {
+    :root {
+      --bg-dark: #0f0f0f;
+      --bg-container: #1a1a1a;
+      --text-primary: #e6e6e6;
+      --text-secondary: #a0a0a0;
+      --accent-color: #4a90e2;
+      --hover-color: #6ab0ff;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, #1c1c1c 100%);
     }
-    /* Container for the content */
+
     .container {
+      background-color: var(--bg-container);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      padding: 2.5rem;
+      margin: 1.5rem 0;
+      max-width: 600px;
+      width: 90%;
       text-align: center;
-      padding: 2rem;
-      border-radius: 10px;
-      background: #1e1e1e;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      max-width: 500px;
-      margin: 1rem;
+      transition: transform 0.3s ease;
     }
-    /* Title styling */
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, var(--text-primary), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    /* Description styling */
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
     p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      line-height: 1.5;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
-    /* Download button styling */
-    .download-btn {
+
+    .btn {
+      display: inline-block;
       text-decoration: none;
-      color: #121212;
-      background-color: #e0e0e0;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      color: var(--text-primary);
+      background-color: var(--accent-color);
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4);
     }
-    .download-btn:hover {
-      background-color: #c0c0c0;
-      transform: scale(1.05);
+
+    .btn:hover {
+      background-color: var(--hover-color);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(74, 144, 226, 0.6);
     }
-    /* Footer styling */
+
+    .btn i {
+      margin-right: 10px;
+    }
+
     footer {
-      margin-top: 2rem;
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 1rem;
       font-size: 0.9rem;
-      color: #888;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -68,13 +126,23 @@
     <p>
       EchoScribe è uno strumento innovativo che ti permette di trascrivere qualsiasi file audio in modo rapido e preciso.
     </p>
-    <!-- Direct download link for the Google Drive file -->
-    <a class="download-btn" href="https://drive.google.com/uc?export=download&id=1UlVnl0mMyKU8OiGlK9KDUAN_LOJf8IWs" download>
-      Scarica EchoScribe
+    <a class="btn" href="https://drive.google.com/uc?export=download&id=1UlVnl0mMyKU8OiGlK9KDUAN_LOJf8IWs" download>
+      <i class="fas fa-download"></i>Scarica EchoScribe
     </a>
-    <footer>
-      &copy; 2025 EchoScribe. Tutti i diritti riservati.
-    </footer>
   </div>
+  
+  <div class="container">
+    <h2>Costo della Licenza</h2>
+    <p>La licenza di EchoScribe costa solo 5€ al mese (30 giorni).</p>
+  </div>
+  
+  <div class="container">
+    <h2>Pagamento via PayPal</h2>
+    <p>Per ottenere la licenza, invia 5€ al nostro PayPal e specifica il tuo nome completo e indirizzo email nel campo "A cosa serve?" per ricevere le credenziali.</p>
+    <a class="btn" href="https://www.paypal.com/paypalme/luca120420" target="_blank">
+      <i class="fab fa-paypal"></i>Paga con PayPal
+    </a>
+  </div>
+  
 </body>
 </html>
